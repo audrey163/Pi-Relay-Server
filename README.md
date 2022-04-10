@@ -6,3 +6,9 @@ allows relay  to be controlled by get requests
 ## turn light off
 `curl http://localhost:420/off?ch=1`
 
+## Setup
+`sudo cp server.service /etc/systemd/system/`
+`sudo systemctl daemon-reload`
+`sudo systemctl enable server.service`
+`sudo systemctl start server.service`
+`sudo systemctl status server.service`
