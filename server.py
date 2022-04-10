@@ -8,19 +8,19 @@ r = Relay() #init GPIO-Relay handler
 def index(): #this is good just to make sure the server is up
     return 'ready'
 
-@app.route('/on', methods = ['GET'])
-def on():
+@app.route('/high', methods = ['GET'])
+def high():
     ch = request.args.get('ch')
     if ch in [ str(i) for i in range(1,9) ]:
-        r.on(ch)
+        r.high(ch)
         return 'success'
     return 'error'
 
-@app.route('/off', methods = ['GET'])
-def off():
+@app.route('/low', methods = ['GET'])
+def low():
     ch = request.args.get('ch')
     if ch in [ str(i) for i in range(1,9) ]:
-        r.off(ch)
+        r.low(ch)
         return 'success'
     return 'error'
 

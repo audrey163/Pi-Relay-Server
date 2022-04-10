@@ -14,8 +14,8 @@ class Relay():
     def __del__(self):
         GPIO.cleanup()
 
-    def off(self,ch):
+    def low(self,ch):
         GPIO.output(self.channels[ch], GPIO.LOW)
 
-    def on(self,ch):
+    def high(self,ch):
         GPIO.output(self.channels[ch], GPIO.HIGH)
